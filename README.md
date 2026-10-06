@@ -1,25 +1,27 @@
-# CODING AGENTS: READ THIS FIRST
+# Сайт писателя Загита Мурсиева
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Одностраничный сайт татарского писателя Загита Мурсиева (Заһит Мурсиев): об авторе, книги, новая книга, заказ книг через WhatsApp / Telegram / почту, форма обратной связи. Два языка: русский и татарский.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Сайт статический (HTML, CSS, JavaScript), без сборки.
 
-## What you should do — IMPORTANT
+## Структура
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+- `docs/` — сам сайт, его раздаёт GitHub Pages
+  - `index.html` — разметка
+  - `styles.css` — стили
+  - `app.js` — тексты на двух языках, книги, переключатель языка, окно заказа, форма
+  - `images/` — фото автора и обложки
+  - `CNAME` — домен `zagitmursiev.ru`
+- `design/` — исходный макет из Claude Design и переписка по нему
 
-**Read `project/Zagit Mursiev v2.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Как поменять контакты для заказа
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+В начале `docs/app.js`, объект `CONTACTS`: почта, номер WhatsApp (только цифры) и имя в Telegram (без @).
 
-## About the design files
+## Публикация (GitHub Pages)
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
-
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
-
-## Bundle contents
-
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Сайт писателя Загита Мурсиева` project files (HTML prototypes, assets, components)
+1. Settings → Pages → Source: «Deploy from a branch», ветка `main`, папка `/docs`.
+2. DNS домена `zagitmursiev.ru` у регистратора:
+   - A-записи `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - CNAME `www` → `azatmursiev.github.io`
+3. Settings → Pages → Custom domain: `zagitmursiev.ru`, затем включить «Enforce HTTPS».

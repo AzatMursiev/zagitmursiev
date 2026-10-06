@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Заһит Мурсиев — Загит Мурсиев</title>
+<meta name="description" content="Загит Мурсиев — татарский писатель из Башкортостана. Книги, новая книга, заказ книг и связь с автором.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&amp;family=PT+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner sans">
+    <a href="#home" class="brand">
+      <span class="brand-mark">ЗМ</span>
+      <span class="brand-name" data-i18n="name">Загит Мурсиев</span>
+    </a>
+    <nav class="nav" id="site-nav">
+      <a href="#about" data-i18n="navAbout">Об авторе</a>
+      <a href="#books" data-i18n="navBooks">Книги</a>
+      <a href="#new" data-i18n="navNew">Новая книга</a>
+      <a href="#contacts" data-i18n="navContacts">Контакты</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Язык / Тел">
+      <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+      <button type="button" data-lang="tt" aria-pressed="false">TT</button>
+    </div>
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Меню">
+      <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section id="home" class="wrap hero-section">
+  <div class="hero-grid">
+    <div class="hero-card">
+      <svg class="hero-ornament" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#F4F0E6" stroke-width="2"><path d="M100 20C130 60 130 110 100 180C70 110 70 60 100 20Z"/><path d="M100 120C70 80 40 84 30 110C55 104 80 112 100 140C120 112 145 104 170 110C160 84 130 80 100 120Z"/><circle cx="100" cy="100" r="92"/></g></svg>
+      <div class="kicker sans hero-kicker" data-i18n="heroKicker">Татарский писатель · Башкортостан</div>
+      <h1 class="hero-title" data-i18n="name">Загит Мурсиев</h1>
+      <div class="hero-quote">
+        <div class="hero-quote-text">«<span data-i18n="quote">Китап — белем чишмәсе. Книга — родник знаний</span>»</div>
+        <div class="hero-quote-src sans">— <span data-i18n="quoteSrc">татарская народная пословица</span></div>
+      </div>
+      <div class="hero-actions sans">
+        <a href="#books" class="btn-light"><span data-i18n="heroBtnBooks">Книги автора</span> <span aria-hidden="true">→</span></a>
+        <a href="#new" class="btn-outline" data-i18n="heroBtnNew">Новая книга</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/author-photo.webp" alt="Загит Мурсиев" data-i18n-alt="name" width="1168" height="1168">
+    </div>
+  </div>
+  <div class="facts" id="facts"></div>
+</section>
+
+<section id="about" class="wrap section">
+  <div class="two-col">
+    <div class="section-head">
+      <div class="kicker sans accent">01</div>
+      <h2 class="section-title" data-i18n="aboutTitle">Об авторе</h2>
+      <svg width="120" height="16" viewBox="0 0 120 16" aria-hidden="true"><g fill="#1E5A4C"><path d="M8 2C11 5 11 11 8 14C5 11 5 5 8 2Z"/><path d="M32 2C35 5 35 11 32 14C29 11 29 5 32 2Z"/><path d="M56 2C59 5 59 11 56 14C53 11 53 5 56 2Z"/></g><path d="M66 8H120" stroke="#C0582F" stroke-width="1.5"/></svg>
+    </div>
+    <div class="about-text">
+      <p class="about-lead" data-i18n="about1"></p>
+      <p data-i18n="about2"></p>
+      <p data-i18n="about3"></p>
+    </div>
+  </div>
+</section>
+
+<section id="books" class="books-section">
+  <div class="wrap books-inner">
+    <div class="books-head">
+      <div class="section-head">
+        <div class="kicker sans accent">02</div>
+        <h2 class="section-title" data-i18n="booksTitle">Книги</h2>
+      </div>
+      <div class="books-count sans" data-i18n="booksCount">6 книг</div>
+    </div>
+    <div class="books-grid" id="books-grid"></div>
+  </div>
+</section>
+
+<section id="new" class="wrap new-section">
+  <div class="new-card">
+    <svg class="new-ornament" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="tul" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20 4C26 12 26 24 20 34C14 24 14 12 20 4Z" fill="#FFF8F0"/></pattern></defs><rect width="400" height="40" fill="url(#tul)"/></svg>
+    <div class="new-body">
+      <div class="new-badge sans" data-i18n="newKicker">Новая книга</div>
+      <h2 class="new-title">Авылдашларым, балакайларым</h2>
+      <div class="new-sub" data-i18n="newSub"></div>
+      <p class="new-desc" data-i18n="newDesc"></p>
+      <button type="button" class="btn-new sans" id="order-new"><span data-i18n="orderBtn">Заказать книгу</span> <span aria-hidden="true">→</span></button>
+    </div>
+    <div class="new-cover">
+      <img src="images/cover-new.webp" alt="Авылдашларым, балакайларым" width="448" height="640">
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="wrap contacts-section">
+  <div class="two-col contacts-grid">
+    <div class="section-head">
+      <div class="kicker sans accent">03</div>
+      <h2 class="section-title" data-i18n="contactsTitle">Написать автору</h2>
+      <p class="contacts-lead" data-i18n="contactsLead"></p>
+    </div>
+    <div>
+      <div class="sent-box" id="sent-box" hidden>
+        <div class="sent-msg" data-i18n="sentMsg"></div>
+        <button type="button" class="btn-again sans" id="send-again" data-i18n="sentAgain">Написать ещё</button>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <label class="field sans">
+          <span data-i18n="fName">Ваше имя</span>
+          <input name="name" required autocomplete="name">
+        </label>
+        <label class="field sans">
+          <span data-i18n="fContact">Телефон или e-mail</span>
+          <input name="contact" required>
+        </label>
+        <label class="field sans">
+          <span data-i18n="fMsg">Сообщение</span>
+          <textarea name="msg" required rows="5"></textarea>
+        </label>
+        <button type="submit" class="btn-submit sans" data-i18n="fSend">Отправить</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer sans">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> <span data-i18n="name">Загит Мурсиев</span></span>
+    <span data-i18n="heroKicker">Татарский писатель · Башкортостан</span>
+  </div>
+</footer>
+
+<div class="modal-backdrop" id="order-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="order-book">
+    <button type="button" class="modal-close" id="order-close" aria-label="Закрыть">×</button>
+    <div class="modal-kicker sans" data-i18n="mTitle">Заказ книги</div>
+    <h3 class="modal-book" id="order-book"></h3>
+    <label class="modal-field sans">
+      <span data-i18n="mText">Готовый текст (можно изменить):</span>
+      <textarea id="order-text" rows="6"></textarea>
+    </label>
+    <div class="modal-choose sans" data-i18n="mChoose">Куда отправить заказ?</div>
+    <div class="modal-channels sans">
+      <a id="order-wa" class="ch ch-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a id="order-tg" class="ch ch-tg" target="_blank" rel="noopener">Telegram</a>
+      <a id="order-mail" class="ch ch-mail" data-i18n="mEmail">Почта</a>
+    </div>
+    <div class="modal-note sans" data-i18n="mTgNote"></div>
+    <div class="modal-copied sans" id="order-copied" data-i18n="mCopied" hidden></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
