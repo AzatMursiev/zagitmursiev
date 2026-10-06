@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Заһит Мурсиев — Загит Мурсиев</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Serif+Caption:ital@0;1&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F7F1E6;color:#2E2620;font-family:'PT Serif',Georgia,serif;-webkit-text-size-adjust:100%}
+a{color:#8E2F2A}a:hover{color:#5E1D1A}
+section[id]{scroll-margin-top:96px}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<div style="font-size:{{ baseSize }};line-height:1.6;min-height:100vh;background:#F7F1E6">
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(247,241,230,0.96);border-bottom:1px solid #E2D5BE;backdrop-filter:blur(6px)">
+  <div style="max-width:1120px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px">
+    <a href="#home" style="text-decoration:none;color:#2E2620;font-family:'PT Serif Caption',serif;font-size:1.25em;letter-spacing:0.01em">{{ t.name }}</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:4px 18px;font-size:0.9em">
+      <a href="#about" style="text-decoration:none;color:#2E2620;padding:6px 0" style-hover="color:#8E2F2A">{{ t.navAbout }}</a>
+      <a href="#books" style="text-decoration:none;color:#2E2620;padding:6px 0" style-hover="color:#8E2F2A">{{ t.navBooks }}</a>
+      <a href="#new" style="text-decoration:none;color:#2E2620;padding:6px 0" style-hover="color:#8E2F2A">{{ t.navNew }}</a>
+      <a href="#contacts" style="text-decoration:none;color:#2E2620;padding:6px 0" style-hover="color:#8E2F2A">{{ t.navContacts }}</a>
+    </nav>
+    <div style="display:flex;border:1px solid #C9B48E;border-radius:999px;overflow:hidden;font-size:0.85em">
+      <button onClick="{{ setRu }}" style="border:0;padding:8px 16px;min-height:44px;cursor:pointer;font-family:inherit;font-size:inherit;background:{{ ruBg }};color:{{ ruFg }}">Рус</button>
+      <button onClick="{{ setTt }}" style="border:0;padding:8px 16px;min-height:44px;cursor:pointer;font-family:inherit;font-size:inherit;background:{{ ttBg }};color:{{ ttFg }}">Тат</button>
+    </div>
+  </div>
+</header>
+
+<section id="home" data-screen-label="Главная" style="max-width:1120px;margin:0 auto;padding:56px 20px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px;align-items:center">
+  <div style="position:relative;max-width:420px;width:100%;justify-self:center">
+    <div style="position:absolute;inset:-14px;border:1px solid #C9B48E;border-radius:220px 220px 16px 16px"></div>
+    <div style="position:relative;aspect-ratio:4/5;width:100%">
+      <image-slot id="author-photo" shape="rounded" radius="16" style="border-radius:210px 210px 12px 12px;overflow:hidden" placeholder="Фото автора"></image-slot>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div style="font-size:0.85em;letter-spacing:0.12em;text-transform:uppercase;color:#4F6B45">{{ t.heroKicker }}</div>
+    <h1 style="margin:0;font-family:'PT Serif Caption',serif;font-weight:400;font-size:2.6em;line-height:1.15;text-wrap:balance">{{ t.name }}</h1>
+    <svg width="180" height="26" viewBox="0 0 180 26" aria-hidden="true"><path d="M0 13H68M112 13H180" stroke="#B08A3E" stroke-width="1"></path><path d="M90 2C96 8 96 17 90 24C84 17 84 8 90 2Z" fill="#8E2F2A"></path><path d="M90 16C82 8 74 9 72 15C78 13 84 14 90 19C96 14 102 13 108 15C106 9 98 8 90 16Z" fill="#4F6B45"></path><circle cx="62" cy="13" r="2.5" fill="#B08A3E"></circle><circle cx="118" cy="13" r="2.5" fill="#B08A3E"></circle></svg>
+    <blockquote style="margin:0;font-style:italic;font-size:1.35em;line-height:1.45;color:#3B302A;text-wrap:pretty">«{{ t.quote }}»</blockquote>
+    <div style="color:#6B5A4A;font-size:0.9em">— {{ t.quoteSrc }}</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+      <a href="#books" style="text-decoration:none;background:#8E2F2A;color:#FBF6EC;padding:14px 26px;border-radius:999px;min-height:48px;display:inline-flex;align-items:center" style-hover="background:#74241F;color:#FBF6EC">{{ t.heroBtnBooks }}</a>
+      <a href="#new" style="text-decoration:none;border:1px solid #8E2F2A;color:#8E2F2A;padding:14px 26px;border-radius:999px;min-height:48px;display:inline-flex;align-items:center" style-hover="background:#F0E4D0">{{ t.heroBtnNew }}</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" data-screen-label="Об авторе" style="background:#EFE5D3;border-top:1px solid #E2D5BE;border-bottom:1px solid #E2D5BE">
+  <div style="max-width:820px;margin:0 auto;padding:64px 20px;display:flex;flex-direction:column;gap:20px">
+    <h2 style="margin:0;font-family:'PT Serif Caption',serif;font-weight:400;font-size:2em;text-align:center">{{ t.aboutTitle }}</h2>
+    <svg width="180" height="26" viewBox="0 0 180 26" aria-hidden="true" style="align-self:center"><path d="M0 13H68M112 13H180" stroke="#B08A3E" stroke-width="1"></path><path d="M90 2C96 8 96 17 90 24C84 17 84 8 90 2Z" fill="#8E2F2A"></path><path d="M90 16C82 8 74 9 72 15C78 13 84 14 90 19C96 14 102 13 108 15C106 9 98 8 90 16Z" fill="#4F6B45"></path><circle cx="62" cy="13" r="2.5" fill="#B08A3E"></circle><circle cx="118" cy="13" r="2.5" fill="#B08A3E"></circle></svg>
+    <p style="margin:0;text-wrap:pretty">{{ t.about1 }}</p>
+    <p style="margin:0;text-wrap:pretty">{{ t.about2 }}</p>
+    <p style="margin:0;text-wrap:pretty">{{ t.about3 }}</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px;margin-top:12px">
+      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+        <div style="background:#F7F1E6;border:1px solid #DCCBAE;border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:4px">
+          <div style="font-family:'PT Serif Caption',serif;font-size:1.3em;color:#8E2F2A">{{ f.big }}</div>
+          <div style="font-size:0.9em;color:#4A3D33;line-height:1.4">{{ f.small }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="books" data-screen-label="Книги" style="max-width:1120px;margin:0 auto;padding:64px 20px">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:40px">
+    <h2 style="margin:0;font-family:'PT Serif Caption',serif;font-weight:400;font-size:2em">{{ t.booksTitle }}</h2>
+    <svg width="180" height="26" viewBox="0 0 180 26" aria-hidden="true"><path d="M0 13H68M112 13H180" stroke="#B08A3E" stroke-width="1"></path><path d="M90 2C96 8 96 17 90 24C84 17 84 8 90 2Z" fill="#8E2F2A"></path><path d="M90 16C82 8 74 9 72 15C78 13 84 14 90 19C96 14 102 13 108 15C106 9 98 8 90 16Z" fill="#4F6B45"></path><circle cx="62" cy="13" r="2.5" fill="#B08A3E"></circle><circle cx="118" cy="13" r="2.5" fill="#B08A3E"></circle></svg>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:36px 28px">
+    <sc-for list="{{ books }}" as="b" hint-placeholder-count="6">
+      <article style="display:flex;flex-direction:column;gap:12px">
+        <div style="aspect-ratio:2/3;width:100%;max-width:280px;align-self:center;box-shadow:0 10px 24px rgba(60,40,20,0.14);border-radius:4px">
+          <image-slot id="{{ b.slotId }}" shape="rounded" radius="4" placeholder="{{ b.coverPh }}"></image-slot>
+        </div>
+        <h3 style="margin:8px 0 0;font-family:'PT Serif Caption',serif;font-weight:400;font-size:1.35em;line-height:1.25">«{{ b.title }}»</h3>
+        <div style="font-style:italic;color:#6B5A4A;margin-top:-6px">{{ b.sub }}</div>
+        <div style="font-size:0.85em;color:#4F6B45">{{ b.meta }}</div>
+        <p style="margin:0;text-wrap:pretty;flex:1">{{ b.desc }}</p>
+        <button onClick="{{ b.onOrder }}" style="align-self:flex-start;border:1px solid #8E2F2A;background:transparent;color:#8E2F2A;padding:12px 24px;min-height:48px;border-radius:999px;font-family:inherit;font-size:0.95em;cursor:pointer" style-hover="background:#8E2F2A;color:#FBF6EC">{{ t.orderBtn }}</button>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section id="new" data-screen-label="Новая книга" style="background:#2F3B2A;color:#F4ECDD">
+  <div style="max-width:1120px;margin:0 auto;padding:72px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:48px;align-items:center">
+    <div style="aspect-ratio:2/3;width:100%;max-width:340px;justify-self:center;box-shadow:0 18px 40px rgba(0,0,0,0.35);border-radius:4px;outline:1px solid #B08A3E;outline-offset:12px">
+      <image-slot id="cover-new" shape="rounded" radius="4" placeholder="Обложка новой книги"></image-slot>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="font-size:0.85em;letter-spacing:0.12em;text-transform:uppercase;color:#D9BE7F">{{ t.newKicker }}</div>
+      <h2 style="margin:0;font-family:'PT Serif Caption',serif;font-weight:400;font-size:2.3em;line-height:1.15;text-wrap:balance">«Авылдашларым, балакайларым»</h2>
+      <div style="font-style:italic;color:#E3D6BF">{{ t.newSub }}</div>
+      <p style="margin:0;text-wrap:pretty">{{ t.newDesc }}</p>
+      <button onClick="{{ orderNew }}" style="align-self:flex-start;border:0;background:#D9BE7F;color:#2A2118;padding:14px 28px;min-height:52px;border-radius:999px;font-family:inherit;font-size:1em;cursor:pointer;margin-top:6px" style-hover="background:#E7D09A">{{ t.orderBtn }}</button>
+    </div>
+  </div>
+</section>
+
+<section id="contacts" data-screen-label="Контакты" style="max-width:720px;margin:0 auto;padding:64px 20px 72px">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:28px;text-align:center">
+    <h2 style="margin:0;font-family:'PT Serif Caption',serif;font-weight:400;font-size:2em">{{ t.contactsTitle }}</h2>
+    <svg width="180" height="26" viewBox="0 0 180 26" aria-hidden="true"><path d="M0 13H68M112 13H180" stroke="#B08A3E" stroke-width="1"></path><path d="M90 2C96 8 96 17 90 24C84 17 84 8 90 2Z" fill="#8E2F2A"></path><path d="M90 16C82 8 74 9 72 15C78 13 84 14 90 19C96 14 102 13 108 15C106 9 98 8 90 16Z" fill="#4F6B45"></path><circle cx="62" cy="13" r="2.5" fill="#B08A3E"></circle><circle cx="118" cy="13" r="2.5" fill="#B08A3E"></circle></svg>
+    <p style="margin:0;color:#4A3D33">{{ t.contactsLead }}</p>
+  </div>
+  <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#EFE5D3;border:1px solid #DCCBAE;border-radius:14px;padding:28px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
+      <div style="font-size:1.2em">{{ t.sentMsg }}</div>
+      <button onClick="{{ resetForm }}" style="border:1px solid #8E2F2A;background:transparent;color:#8E2F2A;padding:10px 22px;min-height:44px;border-radius:999px;font-family:inherit;font-size:0.9em;cursor:pointer">{{ t.sentAgain }}</button>
+    </div>
+  </sc-if>
+  <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+    <form onSubmit="{{ submitForm }}" style="display:flex;flex-direction:column;gap:18px;background:#FBF7EF;border:1px solid #DCCBAE;border-radius:14px;padding:28px">
+      <label style="display:flex;flex-direction:column;gap:6px">
+        <span>{{ t.fName }}</span>
+        <input value="{{ form.name }}" onChange="{{ onName }}" required="{{ true }}" style="font:inherit;padding:12px 14px;min-height:52px;border:1px solid #C9B48E;border-radius:10px;background:#FFFDF8;color:#2E2620"></input>
+      </label>
+      <label style="display:flex;flex-direction:column;gap:6px">
+        <span>{{ t.fContact }}</span>
+        <input value="{{ form.contact }}" onChange="{{ onContact }}" required="{{ true }}" style="font:inherit;padding:12px 14px;min-height:52px;border:1px solid #C9B48E;border-radius:10px;background:#FFFDF8;color:#2E2620"></input>
+      </label>
+      <label style="display:flex;flex-direction:column;gap:6px">
+        <span>{{ t.fMsg }}</span>
+        <textarea value="{{ form.msg }}" onChange="{{ onMsg }}" required="{{ true }}" rows="5" style="font:inherit;padding:12px 14px;border:1px solid #C9B48E;border-radius:10px;background:#FFFDF8;color:#2E2620;resize:vertical"></textarea>
+      </label>
+      <button type="submit" style="align-self:flex-start;border:0;background:#8E2F2A;color:#FBF6EC;padding:14px 30px;min-height:52px;border-radius:999px;font-family:inherit;font-size:1em;cursor:pointer" style-hover="background:#74241F">{{ t.fSend }}</button>
+    </form>
+  </sc-if>
+</section>
+
+<footer style="border-top:1px solid #E2D5BE;padding:28px 20px;text-align:center;color:#6B5A4A;font-size:0.85em">© {{ year }} {{ t.name }}</footer>
+
+<sc-if value="{{ orderOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeOrder }}" style="position:fixed;inset:0;z-index:50;background:rgba(40,28,18,0.55);display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto">
+    <div onClick="{{ stop }}" role="dialog" style="background:#F7F1E6;border-radius:18px;max-width:560px;width:100%;padding:28px 24px;display:flex;flex-direction:column;gap:16px;box-shadow:0 24px 60px rgba(0,0,0,0.3);position:relative;max-height:calc(100vh - 32px);overflow-y:auto">
+      <button onClick="{{ closeOrder }}" aria-label="Закрыть" style="position:absolute;top:10px;right:10px;width:48px;height:48px;border:0;background:transparent;font-size:1.6em;cursor:pointer;color:#6B5A4A">×</button>
+      <h3 style="margin:0;padding-right:40px;font-family:'PT Serif Caption',serif;font-weight:400;font-size:1.5em;line-height:1.25">{{ t.mTitle }}</h3>
+      <div style="color:#4F6B45">«{{ orderBook }}»</div>
+      <label style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:0.9em;color:#4A3D33">{{ t.mText }}</span>
+        <textarea value="{{ orderText }}" onChange="{{ onOrderText }}" rows="6" style="font:inherit;font-size:0.95em;padding:12px 14px;border:1px solid #C9B48E;border-radius:10px;background:#FFFDF8;color:#2E2620;resize:vertical"></textarea>
+      </label>
+      <div style="font-size:0.9em;color:#4A3D33">{{ t.mChoose }}</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="{{ waHref }}" target="_blank" rel="noopener" style="text-decoration:none;background:#2F6B3A;color:#FFFFFF;padding:14px 20px;min-height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.05em" style-hover="background:#25562F;color:#FFFFFF">WhatsApp</a>
+        <a href="{{ tgHref }}" onClick="{{ copyText }}" target="_blank" rel="noopener" style="text-decoration:none;background:#2A6C9A;color:#FFFFFF;padding:14px 20px;min-height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.05em" style-hover="background:#215880;color:#FFFFFF">Telegram</a>
+        <a href="{{ mailHref }}" style="text-decoration:none;background:#8E2F2A;color:#FFFFFF;padding:14px 20px;min-height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.05em" style-hover="background:#74241F;color:#FFFFFF">{{ t.mEmail }}</a>
+      </div>
+      <div style="font-size:0.85em;color:#6B5A4A;line-height:1.45">{{ t.mTgNote }}</div>
+      <sc-if value="{{ copied }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size:0.9em;color:#2F6B3A">{{ t.mCopied }}</div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;email&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;azatmursiev@yandex.ru&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Контакты для заказа&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;79930503377&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Контакты для заказа&quot;},&quot;telegram&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;azatmursiev&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Контакты для заказа&quot;},&quot;textSize&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Обычный&quot;,&quot;Крупный&quot;,&quot;Очень крупный&quot;],&quot;default&quot;:&quot;Крупный&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Вид&quot;}}">
+const T = {
+  ru: {
+    name: 'Загит Мурсиев', navAbout: 'Об авторе', navBooks: 'Книги', navNew: 'Новая книга', navContacts: 'Контакты',
+    heroKicker: 'Татарский писатель · Башкортостан',
+    quote: 'Китап — белем чишмәсе. Книга — родник знаний',
+    quoteSrc: 'татарская народная пословица',
+    heroBtnBooks: 'Книги автора', heroBtnNew: 'Новая книга',
+    aboutTitle: 'Об авторе',
+    about1: 'Загит Мурсиев (Заһит Мурсиев) родился в 1950 году в деревне Абуталипово Караидельского района Башкортостана. Член Союза писателей Республики Башкортостан.',
+    about2: '32 года работал журналистом районной газеты «Караидель». Лауреат премии имени Гаяна Лукманова.',
+    about3: 'Пишет прозу, стихи, юмористические произведения и книги для детей. Его фольклорные записи вошли в академический свод «Татарское народное творчество» (тома 13–14, Казань).',
+    f: [['1950', 'год рождения, д. Абуталипово'], ['32 года', 'в газете «Караидель»'], ['Премия', 'имени Гаяна Лукманова'], ['Тт. 13–14', 'свода «Татарское народное творчество»']],
+    booksTitle: 'Книги', orderBtn: 'Заказать книгу', pub: 'Издательство уточняется', year: 'год уточняется',
+    newKicker: 'Новая книга', newSub: 'Мои земляки, мои детки',
+    newDesc: 'Стихи и рассказы для детей — о деревне, о земляках, о том, что важно беречь с малых лет.',
+    contactsTitle: 'Контакты', contactsLead: 'Напишите автору — он обязательно ответит.',
+    fName: 'Ваше имя', fContact: 'Телефон или e-mail', fMsg: 'Сообщение', fSend: 'Отправить',
+    sentMsg: 'Спасибо! Откроется ваша почта с готовым письмом — просто нажмите «Отправить».', sentAgain: 'Написать ещё',
+    mTitle: 'Заказать книгу', mText: 'Готовый текст (можно изменить):', mChoose: 'Куда отправить заказ?', mEmail: 'Электронная почта',
+    mTgNote: 'Для Telegram текст копируется автоматически — вставьте его в чат.', mCopied: 'Текст скопирован.',
+    orderMsg: b => `Здравствуйте! Хочу заказать книгу «${b}».\nКоличество: 1 шт.\nМоё имя: \nГород и адрес доставки: \nТелефон: `,
+    mailSubj: b => `Заказ книги «${b}»`, fbSubj: 'Сообщение с сайта',
+  },
+  tt: {
+    name: 'Заһит Мурсиев', navAbout: 'Автор турында', navBooks: 'Китаплар', navNew: 'Яңа китап', navContacts: 'Элемтә',
+    heroKicker: 'Татар язучысы · Башкортстан',
+    quote: 'Китап — белем чишмәсе',
+    quoteSrc: 'халык мәкале',
+    heroBtnBooks: 'Автор китаплары', heroBtnNew: 'Яңа китап',
+    aboutTitle: 'Автор турында',
+    about1: 'Заһит Мурсиев 1950 елда Башкортстанның Кариҗидел районы Әбүталип авылында туган. Башкортстан Республикасы Язучылар берлеге әгъзасы.',
+    about2: '32 ел «Кариҗидел» район газетасында журналист булып эшләгән. Гаян Лукманов исемендәге бүләк лауреаты.',
+    about3: 'Проза, шигырьләр, юмористик әсәрләр һәм балалар өчен китаплар яза. Аның фольклор язмалары «Татар халык иҗаты» академик җыентыгына кергән (13–14 томнар, Казан).',
+    f: [['1950', 'туган елы, Әбүталип авылы'], ['32 ел', '«Кариҗидел» газетасында'], ['Бүләк', 'Гаян Лукманов исемендәге'], ['13–14 т.', '«Татар халык иҗаты» җыентыгы']],
+    booksTitle: 'Китаплар', orderBtn: 'Китап заказ итү', pub: 'Нәшрият төгәллләнә', year: 'елы төгәлләнә',
+    newKicker: 'Яңа китап', newSub: 'Балалар өчен шигырьләр һәм хикәяләр',
+    newDesc: 'Балалар өчен шигырьләр һәм хикәяләр — авыл, авылдашлар һәм кечкенәдән үк кадерләргә тиешле нәрсәләр турында.',
+    contactsTitle: 'Элемтә', contactsLead: 'Авторга языгыз — ул һичшиксез җавап бирер.',
+    fName: 'Исемегез', fContact: 'Телефон яки e-mail', fMsg: 'Хат', fSend: 'Җибәрү',
+    sentMsg: 'Рәхмәт! Әзер хат белән почтагыз ачылыр — «Җибәрү»гә басыгыз.', sentAgain: 'Тагын язу',
+    mTitle: 'Китап заказ итү', mText: 'Әзер текст (үзгәртергә мөмкин):', mChoose: 'Заказны кая җибәрергә?', mEmail: 'Электрон почта',
+    mTgNote: 'Telegram өчен текст автоматик рәвештә күчерелә — аны чатка куегыз.', mCopied: 'Текст күчерелде.',
+    orderMsg: b => `Исәнмесез! «${b}» китабын заказ итәсем килә.\nСаны: 1 данә.\nИсемем: \nШәһәр һәм адрес: \nТелефон: `,
+    mailSubj: b => `«${b}» китабына заказ`, fbSubj: 'Сайттан хат',
+  }
+};
+T.tt.pub = 'Нәшрият төгәлләнә';
+
+const BOOKS = [
+  { id: 'mahabbat', title: 'Мәхәббәтне рәнҗетмәгез', year: 2004, ru: ['Не обижайте любовь', 'Рассказы и стихи о любви, верности и человеческих чувствах.'], tt: ['Мәхәббәтне рәнҗетмәгез', 'Мәхәббәт, тугрылык һәм кеше хисләре турында хикәяләр һәм шигырьләр.'] },
+  { id: 'sandugach', title: 'Сандугач бүләге', year: 2007, ru: ['Подарок соловья', 'Сборник прозы и поэзии о родной деревне и её людях.'], tt: ['Сандугач бүләге', 'Туган авыл һәм аның кешеләре турында проза һәм поэзия җыентыгы.'] },
+  { id: 'altyn', title: 'Алтын курай', year: null, ru: ['Золотой курай', 'Произведения, навеянные песенной и народной традицией края.'], tt: ['Алтын курай', 'Төбәкнең җыр һәм халык традицияләреннән илһамланган әсәрләр.'] },
+  { id: 'usal', title: 'Усал китап', year: 2018, ru: ['Сердитая книга', 'Юмористические рассказы — с улыбкой о жизни и людях.'], tt: ['Усал китап', 'Юмористик хикәяләр — тормыш һәм кешеләр турында елмаеп.'] },
+  { id: 'soltanyar', title: 'Солтанъяр', year: 2019, ru: ['Солтанъяр', 'Проза о судьбах земляков и памяти родного края.'], tt: ['Солтанъяр', 'Авылдашлар язмышы һәм туган як хәтере турында проза.'] },
+  { id: 'balkon', title: 'Балкондагы баш', year: 2023, ru: ['Голова на балконе', 'Новая книга юмора и сатиры.'], tt: ['Балкондагы баш', 'Юмор һәм сатираның яңа китабы.'] },
+];
+const NEW_TITLE = 'Авылдашларым, балакайларым';
+
+class Component extends DCLogic {
+  state = { lang: 'ru', order: null, orderText: '', copied: false, form: { name: '', contact: '', msg: '' }, sent: false };
+  componentDidMount() {
+    try { const l = localStorage.getItem('zm-lang'); if (l === 'tt' || l === 'ru') this.setState({ lang: l }); } catch (e) {}
+    this._key = e => { if (e.key === 'Escape') this.setState({ order: null }); };
+    window.addEventListener('keydown', this._key);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._key); }
+  setLang(l) { this.setState({ lang: l }); try { localStorage.setItem('zm-lang', l); } catch (e) {} }
+  openOrder(title) { const t = T[this.state.lang]; this.setState({ order: title, orderText: t.orderMsg(title), copied: false }); }
+  renderVals() {
+    const { lang, order, orderText, form, sent } = this.state;
+    const t = T[lang];
+    const email = this.props.email ?? 'azatmursiev@yandex.ru';
+    const wa = String(this.props.whatsapp ?? '79930503377').replace(/\D/g, '');
+    const tg = String(this.props.telegram ?? 'azatmursiev').replace(/^@/, '');
+    const on = { background: '#8E2F2A', color: '#FBF6EC' }, off = { background: 'transparent', color: '#2E2620' };
+    const books = BOOKS.map(b => ({
+      slotId: 'cover-' + b.id, coverPh: 'Обложка', title: b.title, sub: b[lang][0] === b.title ? '' : b[lang][0],
+      meta: (b.year || t.year) + ' · ' + t.pub, desc: b[lang][1], onOrder: () => this.openOrder(b.title),
+    }));
+    return {
+      t, books, year: new Date().getFullYear(),
+      baseSize: this.props.textSize === 'Очень крупный' ? '22px' : this.props.textSize === 'Обычный' ? '18px' : '20px',
+      facts: t.f.map(([big, small]) => ({ big, small })),
+      ruBg: lang === 'ru' ? on.background : off.background, ruFg: lang === 'ru' ? on.color : off.color,
+      ttBg: lang === 'tt' ? on.background : off.background, ttFg: lang === 'tt' ? on.color : off.color,
+      setRu: () => this.setLang('ru'), setTt: () => this.setLang('tt'),
+      orderNew: () => this.openOrder(NEW_TITLE),
+      orderOpen: !!order, orderBook: order || '', orderText, copied: this.state.copied,
+      closeOrder: () => this.setState({ order: null }), stop: e => e.stopPropagation(),
+      onOrderText: e => this.setState({ orderText: e.target.value }),
+      waHref: `https://wa.me/${wa}?text=${encodeURIComponent(orderText)}`,
+      tgHref: `https://t.me/${tg}`,
+      mailHref: `mailto:${email}?subject=${encodeURIComponent(order ? t.mailSubj(order) : '')}&body=${encodeURIComponent(orderText)}`,
+      copyText: () => { try { navigator.clipboard.writeText(orderText); } catch (e) {} this.setState({ copied: true }); },
+      form, sent, notSent: !sent,
+      onName: e => this.setState({ form: { ...form, name: e.target.value } }),
+      onContact: e => this.setState({ form: { ...form, contact: e.target.value } }),
+      onMsg: e => this.setState({ form: { ...form, msg: e.target.value } }),
+      submitForm: e => {
+        e.preventDefault();
+        const body = `${form.msg}\n\n— ${form.name}\n${form.contact}`;
+        window.open(`mailto:${email}?subject=${encodeURIComponent(t.fbSubj)}&body=${encodeURIComponent(body)}`, '_blank');
+        this.setState({ sent: true });
+      },
+      resetForm: () => this.setState({ sent: false, form: { name: '', contact: '', msg: '' } }),
+    };
+  }
+}
+</script>
+</body>
+</html>
